@@ -1,0 +1,3 @@
+﻿class Biografico extends UploadPicture {
+
+}

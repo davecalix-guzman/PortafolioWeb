@@ -1,0 +1,68 @@
+﻿@model PortafolioWebAdministracion.Models.Formacion
+
+@{
+    ViewData["ControllerName"] = "Formacion Academica";
+    ViewData["Title"] = "Modificar";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="alert alert-primary text-left" role="alert">
+    <b>MODIFICAR FORMACION ACADEMICA</b>
+</div>
+<hr />
+<div class="row text-left">
+    <div class="col-md-5">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Id" />
+
+            <label asp-for="Profesion" class="control-label"></label>
+            <div class="form-group input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text fas fa-graduation-cap alert-info" />
+                </div>
+                <input asp-for="Profesion" class="form-control" style="height:30px" placeholder="Ingrese la profesion u oficio" />
+                <span asp-validation-for="Profesion" class="alert-danger" style="font-weight:bolder;"></span>
+            </div>
+
+            <label asp-for="CentroEstudios" class="control-label"></label>
+            <div class="form-group input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text fas fa-school alert-info" />
+                </div>
+                <input asp-for="CentroEstudios" class="form-control" style="height:30px" placeholder="Ingrese el centro de estudios" />
+                <span asp-validation-for="CentroEstudios" class="alert-danger" style="font-weight:bolder;"></span>
+            </div>
+
+            <label asp-for="FechaInicio" class="control-label"></label>
+            <div class="form-group input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text fas fa-calendar-plus alert-info" />
+                </div>
+                <input asp-for="FechaInicio" class="form-control" style="height:30px"/>
+                <span asp-validation-for="FechaInicio" class="alert-danger" style="font-weight:bolder;"></span>
+            </div>
+
+            <label asp-for="FechaFinalizacion" class="control-label"></label>
+            <div class="form-group input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text fas fa-calendar-minus alert-info" />
+                </div>
+                <input asp-for="FechaFinalizacion" class="form-control" style="height:30px"/>
+                <span asp-validation-for="FechaFinalizacion" class="alert-danger" style="font-weight:bolder;"></span>
+            </div>
+
+            <div class="form-group text-left">
+                <a class="btn btn-info btn-sm" data-toggle="tooltip"
+                   data-placement="top"
+                   title="Regresar" asp-action="Index">
+                    <span class="fas fa-arrow-circle-left" />
+                </a>
+                <input type="submit" value="Guardar" class="btn btn-primary btn-sm" />
+            </div>
+        </form>
+    </div>
+</div>
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

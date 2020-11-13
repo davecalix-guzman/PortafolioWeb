@@ -1,0 +1,65 @@
+﻿@model PortafolioWebAdministracion.Models.Referencia
+
+@{
+    ViewData["ControllerName"] = "Referencias";
+    ViewData["Title"] = "Detalles";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="alert alert-primary text-left" role="alert">
+    <b>DETALLE DE REFERENCIA PROFESIONAL</b>
+</div>
+<div class="alert alert-info text-left" role="alert">
+    Informacion de referencia profesional seleccionada
+</div>
+
+<table class="table table-hover table-dark text-left">
+    <thead>
+        <tr>
+            <th scope="col">
+                #
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NombreCompleto)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Profesion)
+            </th>           
+            <th>
+                @Html.DisplayNameFor(model => model.Email)
+            </th>          
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <th>
+                @Html.DisplayFor(model => model.Id)
+            </th>
+            <th>
+                @Html.DisplayFor(model => model.NombreCompleto)
+            </th>
+            <th>
+                @Html.DisplayFor(model => model.Profesion)
+            </th>           
+            <th>
+                @Html.DisplayFor(model => model.Email)
+            </th>        
+        </tr>
+    </tbody>
+</table>
+<hr />
+<div class="text-left">
+    <div class="form-group">
+        <a class="btn btn-info btn-sm" data-toggle="tooltip"
+           data-placement="top"
+           title="Regresar" asp-action="Index">
+            <span class="fas fa-arrow-circle-left" />
+        </a>
+        <a class="btn btn-warning btn-sm" data-toggle="tooltip"
+           data-placement="top"
+           title="Modificar referencia profesional" asp-action="Edit"
+           asp-route-id="@Model.Id">
+            <span class="fas fa-users-cog" />
+        </a>
+    </div>
+</div>

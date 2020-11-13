@@ -1,0 +1,206 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewBag.ControllerName | @ViewBag.Title</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+    <link href="~/lib/font-awesome/css/all.css" rel="stylesheet" />
+    <link href="~/css/other.css" rel="stylesheet" />
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light border-bottom box-shadow mb-3">
+            <div class="container">
+                <a id="aColor" class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index"><strong>Portafolio Web -  @ViewBag.ControllerName | @ViewBag.Title</strong></a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <div class="container-fluid">
+        <div class="card">
+            <div class="card-header">
+                <table class="">
+                    <thead>
+                        <tr>
+                            <th>
+                                <div class="d-flex">
+                                    <div class="dropdown mr-2">
+                                        <button type="button" class="btn btn-primary btn-sm dropdown-toggle" id="dropdownMenuOffset" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-offset="20,30">
+                                            Datos Maestros
+                                        </button>
+                                        <div class="dropdown-menu" aria-labelledby="dropdownMenuOffset">
+                                            <a class="dropdown-item"
+                                               data-toggle="tooltip"
+                                               data-placement="top"
+                                               style="width:inherit; text-align:left"
+                                               title="Informacion Biografica"
+                                               asp-controller="Biograficos"
+                                               asp-action="Index">
+                                                <span class="caret">Informacion Biografica</span>
+                                            </a>
+
+                                            <a class="dropdown-item"
+                                               data-toggle="tooltip"
+                                               data-placement="top"
+                                               style="width:inherit; text-align:left"
+                                               title="Formacion Academica"
+                                               asp-controller="Formacion"
+                                               asp-action="Index">
+                                                <span class="caret">Formacion Academica</span>
+                                            </a>
+
+                                            <a class="dropdown-item"
+                                               data-toggle="tooltip"
+                                               data-placement="top"
+                                               style="width:inherit; text-align:left"
+                                               title="Experiencia Laboral"
+                                               asp-controller="ExperienciaLaboral"
+                                               asp-action="Index">
+                                                <span class="caret">Experiencia Laboral</span>
+                                            </a>
+
+                                            <a class="dropdown-item"
+                                               data-toggle="tooltip"
+                                               data-placement="top"
+                                               style="width:inherit; text-align:left"
+                                               title="Certificaciones"
+                                               asp-controller="Certificacion"
+                                               asp-action="Index">
+                                                <span class="caret">Certificaciones</span>
+                                            </a>
+
+                                            <a class="dropdown-item"
+                                               data-toggle="tooltip"
+                                               data-placement="top"
+                                               style="width:inherit; text-align:left"
+                                               title="Habilidades Tecnicas"
+                                               asp-controller="Habilidad"
+                                               asp-action="Index">
+                                                <span class="caret">Habilidades Tecnicas</span>
+                                            </a>
+
+                                            <a class="dropdown-item"
+                                               data-toggle="tooltip"
+                                               data-placement="top"
+                                               style="width:inherit; text-align:left"
+                                               title="Referencias Profesionales"
+                                               asp-controller="Referencias"
+                                               asp-action="Index">
+                                                <span class="caret">Referencias Profesionales</span>
+                                            </a>
+
+                                            <a class="dropdown-item"
+                                               data-toggle="tooltip"
+                                               data-placement="top"
+                                               style="width:inherit; text-align:left"
+                                               title="Usuarios"
+                                               asp-controller="Usuarios"
+                                               asp-action="Index">
+                                                <span class="caret">Usuarios</span>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </th>
+                            <th>
+                                <div class="input-group mr-2">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text fas fa-file-pdf alert-info" />
+                                    </div>
+                                    <a class="btn btn-danger btn-sm"
+                                       asp-action="Create">
+                                        Descargar en PDF
+                                    </a>
+                                </div>
+                            </th>
+                            <th>
+                                <div class="input-group mr-2">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text fas fa-print alert-info" />
+                                    </div>
+                                    <a class="btn btn-info btn-sm"
+                                       asp-action="Create">
+                                        Imprimir
+                                    </a>
+                                </div>
+                            </th>
+                            <th>
+                                <div class="input-group mr-2">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text fas fa-envelope alert-info" />
+                                    </div>
+                                    <a class="btn btn-outline-secondary btn-sm"
+                                       asp-action="Create">
+                                        Contactar
+                                    </a>
+                                </div>
+                            </th>
+                            <th>
+                                <div class="input-group mr-2">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text fab fa-facebook alert-info" />
+                                    </div>
+                                    <a class="btn btn-outline-secondary btn-sm"
+                                       asp-action="Create">
+                                        Facebook
+                                    </a>
+                                </div>
+                            </th>
+                            <th>
+                                <div class="input-group mr-2">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text fab fa-twitter alert-info" />
+                                    </div>
+                                    <a class="btn btn-outline-secondary btn-sm"
+                                       asp-action="Create">
+                                        Twitter
+                                    </a>
+                                </div>
+                            </th>
+                            <th>
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text fab fa-linkedin alert-info" />
+                                    </div>
+                                    <a class="btn btn-outline-secondary btn-sm"
+                                       asp-action="Create">
+                                        Linkedin
+                                    </a>
+                                </div>
+                            </th>
+                            <th>
+                                <div class=" text-danger"></div>
+                            </th>
+                        </tr>
+                    </thead>
+                </table>
+            </div>
+            <div class="card-body">
+                <main role="main" class="pb-3">
+                    @RenderBody()
+                </main>
+            </div>
+        </div>
+    </div>
+    <footer class="footer alert-success mt-3">
+        <div class="container">
+            <strong>&copy; @DateTime.Now.Year - Soluciones Ingeniosas</strong>
+        </div>
+    </footer>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/UploadPicture.js" asp-append-version="true"></script>
+    <script src="~/js/Principal.js" asp-append-version="true"></script>
+    <script src="~/js/Biografico.js" asp-append-version="true"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @RenderSection("Scripts", required: false)
+
+</body>
+</html>

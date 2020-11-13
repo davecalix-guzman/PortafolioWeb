@@ -1,0 +1,90 @@
+﻿@model IEnumerable<PortafolioWebAdministracion.Models.Biografico>
+@{
+    ViewData["ControllerName"] = "Informacion Biografica";
+    ViewData["Title"] = "Inicio";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<p class="text-left">
+    <div class="form-group input-group mb-3">
+        <div class="input-group-prepend">
+            <span class="input-group-text fas fa-plus alert-danger" />
+        </div>
+        <a class="btn btn-info btn-sm"
+           data-toggle="tooltip"
+           data-placement="top"
+           title="Informacion Biografica"
+           asp-action="Create">
+            Informacion Biografica
+        </a>
+    </div>
+</p>
+<hr />
+<table class="table table-striped table-hover table-dark text-left">
+    <thead>
+        <tr>
+            <th>
+                #
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Nombres)
+            </th>          
+            <th>
+                @Html.DisplayNameFor(model => model.Telefono)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Email)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FechaNacimiento)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.EstadoCivil)
+            </th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nombres)
+                @Html.DisplayFor(modelItem => item.Apellidos)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Telefono)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Email)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FechaNacimiento)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EstadoCivil)
+            </td>
+            <td>
+                <a class="btn btn-warning btn-sm" data-toggle="tooltip"
+                   data-placement="top"
+                   title="Modificar" asp-action="Edit" asp-route-id="@item.Id">
+                    <span class="fas fa-user-edit" />
+                </a>
+                <a class="btn btn-info btn-sm" data-toggle="tooltip"
+                   data-placement="top"
+                   title="Ver detalles" asp-action="Details" asp-route-id="@item.Id">
+                    <span class="fas fa-user-tie" />
+                </a>
+                <a class="btn btn-danger btn-sm" data-toggle="tooltip"
+                   data-placement="top"
+                   title="Eliminar informacion" asp-action="Delete" asp-route-id="@item.Id">
+                    <span class="fas fa-user-injured" />
+                </a>
+            </td>
+        </tr>
+        }
+    </tbody>
+</table>

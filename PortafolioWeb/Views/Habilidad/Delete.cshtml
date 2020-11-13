@@ -1,0 +1,59 @@
+﻿@model PortafolioWebAdministracion.Models.Habilidad
+
+@{
+    ViewData["ControllerName"] = "Habilidad Tecnica";
+    ViewData["Title"] = "Eliminar";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="alert alert-primary text-left" role="alert">
+    <b>ELIMINAR HABILIDAD TECNICA</b>
+</div>
+<div class="alert alert-danger text-left" role="alert">
+    Esta seguro que desea eliminar la habilidad tecnica?
+</div>
+<div>
+    <hr />
+    <table class="table table-hover table-dark text-left">
+        <thead>
+            <tr>
+                <th scope="col">
+                    #
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.HabilidadDescripcion)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Nivel)
+                </th>              
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th>
+                    @Html.DisplayFor(model => model.Id)
+                </th>
+                <th>
+                    @Html.DisplayFor(model => model.HabilidadDescripcion)
+                </th>
+                <th>
+                    @Html.DisplayFor(model => model.Nivel)
+                </th>              
+            </tr>
+        </tbody>
+    </table>
+</div>
+<hr />
+<div class="text-left">
+    <form asp-action="Delete">
+        <div class="form-group">
+            <a class="btn btn-info btn-sm" data-toggle="tooltip"
+               data-placement="top"
+               title="Regresar" asp-action="Index">
+                <span class="fas fa-arrow-circle-left" />
+            </a>
+            <input type="hidden" asp-for="Id" />
+            <input type="submit" value="Eliminar" class="btn btn-danger btn-sm" />
+        </div>
+    </form>
+</div>

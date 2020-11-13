@@ -1,0 +1,77 @@
+﻿@model PortafolioWebAdministracion.Models.Biografico
+@{
+    ViewData["ControllerName"] = "Informacion Biografica";
+    ViewData["Title"] = "Detalles";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="alert alert-primary text-left" role="alert">
+    <b>DETALLE DE INFORMACION BIOGRAFICA</b>
+</div>
+<div class="alert alert-info text-left" role="alert">
+    Informacion Biografica
+</div>
+<hr />
+<table class="table table-striped table-hover table-dark text-left">
+    <thead>
+        <tr>
+            <th>
+                #
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Nombres)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Telefono)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Email)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FechaNacimiento)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.EstadoCivil)
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => modelItem.Id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => modelItem.Nombres)
+                @Html.DisplayFor(modelItem => modelItem.Apellidos)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => modelItem.Telefono)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => modelItem.Email)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => modelItem.FechaNacimiento)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => modelItem.EstadoCivil)
+            </td>
+        </tr>
+    </tbody>
+</table>
+<hr />
+<div class="text-left">
+    <div class="form-group">
+        <a class="btn btn-info btn-sm" data-toggle="tooltip"
+           data-placement="top"
+           title="Regresar" asp-action="Index">
+            <span class="fas fa-arrow-circle-left" />
+        </a>
+        <a class="btn btn-warning btn-sm" data-toggle="tooltip"
+           data-placement="top"
+           title="Modificar informacion biografica" asp-action="Edit"
+           asp-route-id="@Model.Id">
+            <span class="fas fa-edit" />
+        </a>
+    </div>
+</div>
